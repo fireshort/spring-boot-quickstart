@@ -51,8 +51,6 @@ public class TaskController {
 	@Autowired
 	private TaskService taskService;
 
-
-
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber,
 			@RequestParam(value = "page.size", defaultValue = PAGE_SIZE) int pageSize,
