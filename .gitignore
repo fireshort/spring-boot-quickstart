@@ -6,3 +6,8 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+
+SpringBoot.ipr
+SpringBoot.iws
+application.log
+myproject.iml
