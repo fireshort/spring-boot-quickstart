@@ -1,0 +1,1 @@
+spring-boot-quickstart是基于Spring Boot技术，Pragmatic风格的JavaEE应用参考示例，是JavaEE世界中的主流技术选型，最佳实践的总结与演示。spring-boot-quickstart采用了SpringSide里面的代码例子，但是用Spring Boot来重新集成。
