@@ -29,6 +29,16 @@ public class User extends IdEntity {
 	private String roles;
 	private Date registerDate;
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	private String email;
+
 	public User() {
 	}
 

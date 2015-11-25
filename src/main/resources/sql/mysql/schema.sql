@@ -6,7 +6,7 @@ create table ss_task (
 	title varchar(128) not null,
 	description varchar(255),
 	user_id bigint not null,
-    primary key (id)
+  primary key (id)
 ) engine=InnoDB;
 
 create table ss_user (
@@ -17,5 +17,6 @@ create table ss_user (
 	salt varchar(64) not null,
 	roles varchar(255) not null,
 	register_date timestamp not null default 0,
+	email varchar(255),
 	primary key (id)
 ) engine=InnoDB;

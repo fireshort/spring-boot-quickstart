@@ -6,6 +6,7 @@
 package org.springside.examples.quickstart.service.account;
 
 import org.springside.examples.quickstart.entity.User;
+import org.springside.examples.quickstart.jms.NotifyMessageProducer;
 import org.springside.examples.quickstart.repository.TaskDao;
 import org.springside.examples.quickstart.repository.UserDao;
 import org.springside.examples.quickstart.service.ServiceException;
@@ -43,6 +44,9 @@ public class AccountService {
 	private TaskDao taskDao;
 	private Clock clock = Clock.DEFAULT;
 
+	@Autowired(required = false)
+	private NotifyMessageProducer notifyMessageProducer;
+
 	public List<User> getAllUser() {
 		return (List<User>) userDao.findAll();
 	}
@@ -68,6 +72,11 @@ public class AccountService {
 			entryptPassword(user);
 		}
 		userDao.save(user);
+
+		// 发送JMS消息
+		if (notifyMessageProducer != null) {
+			sendNotifyMessage(user);
+		}
 	}
 
 	public void deleteUser(Long id) {
@@ -118,5 +127,19 @@ public class AccountService {
 
 	public void setClock(Clock clock) {
 		this.clock = clock;
+	}
+
+	/**
+	 * 发送用户变更消息.
+	 *
+	 * 同时发送只有一个消费者的Queue消息与发布订阅模式有多个消费者的Topic消息.
+	 */
+	private void sendNotifyMessage(User user) {
+		try {
+			notifyMessageProducer.sendQueue(user);
+			notifyMessageProducer.sendTopic(user);
+		} catch (Exception e) {
+			logger.error("消息发送失败", e);
+		}
 	}
 }
