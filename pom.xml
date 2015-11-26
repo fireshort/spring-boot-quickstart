@@ -7,7 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Spring Boot Quick Start Sample</name>
-    <description>Spring Boot Web JSP Sample</description>
+    <description>Spring Boot Quick Start Sample</description>
     <url>http://projects.spring.io/spring-boot/</url>
     <organization>
         <name>Pivotal Software, Inc.</name>
@@ -28,7 +28,7 @@
         <guava.version>18.0</guava.version>
         <shiro.version>1.2.3</shiro.version>
         <sitemesh.version>2.4.2</sitemesh.version>
-        <springside.version>4.3.0-SNAPSHOT</springside.version>
+        <!--<springside.version>4.3.0-SNAPSHOT</springside.version>-->
         <assertj.version>1.7.0</assertj.version>
     </properties>
 
@@ -92,13 +92,19 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>2.4.4</version>
+            <optional>true</optional>
+        </dependency>
         <!-- GENERAL UTILS end -->
 
-        <dependency>
-            <groupId>io.springside</groupId>
-            <artifactId>springside-core</artifactId>
-            <version>${springside.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.springside</groupId>-->
+            <!--<artifactId>springside-core</artifactId>-->
+            <!--<version>${springside.version}</version>-->
+        <!--</dependency>-->
 
         <!-- SECURITY begin -->
         <dependency>
