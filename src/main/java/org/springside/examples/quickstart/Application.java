@@ -7,13 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.ErrorPage;
+import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import javax.servlet.Filter;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
 import javax.validation.Validator;
 import java.io.*;
+import java.util.Enumeration;
 
 @SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 //@Configuration定义配置类
@@ -45,8 +49,11 @@ public class Application {
     }
 
     @Bean
-    public Filter sitemeshFilter() {
-        return new SiteMeshFilter();
+    public FilterRegistrationBean sitemeshFilter() {
+        FilterRegistrationBean registration = new FilterRegistrationBean();
+        registration.setFilter(new SiteMeshFilter());
+        registration.addInitParameter("sitemesh.configfile","classpath:sitemesh/sitemesh.xml");
+        return registration;
     }
 
 }
