@@ -92,7 +92,7 @@ public class BaseFunctionalTestCase {
 	 */
 	protected static void reloadSampleData() throws Exception {
 		String dbType = propertiesLoader.getProperty("db.type", "h2");
-		DataFixtures.executeScript(dataSource, "classpath:data/" + dbType + "/cleanup-data.sql", "classpath:data/"
-				+ dbType + "/data.sql");
+		DataFixtures.executeScript(dataSource, "classpath:data/" + dbType + "/cleanup-data-mysql.sql", "classpath:data/"
+				+ dbType + "/data-mysql.sql");
 	}
 }
