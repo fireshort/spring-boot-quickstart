@@ -5,6 +5,7 @@ spring-boot-quickstart是基于Spring Boot技术，Pragmatic风格的JavaEE应�
 
 Spring Boot可以打包生成一个可执行的jar，由于jsp的限制，必须打包成war格式。直接mvn package就可以打包生成可执行的war。
 cd target
-java -jar spring-boot-quickstart-0.0.1-SNAPSHOT.war 就可以运行项目。
+java -jar spring-boot-quickstart-0.0.1-SNAPSHOT.war 
+就可以运行项目。
 
 ## Spring Boot介绍
