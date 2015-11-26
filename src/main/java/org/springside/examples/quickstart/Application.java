@@ -1,23 +1,18 @@
 package org.springside.examples.quickstart;
 
-import com.opensymphony.sitemesh.webapp.SiteMeshFilter;
-import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.ErrorPage;
-import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springside.examples.quickstart.config.MySiteMeshFilter;
 
 import javax.servlet.Filter;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
 import javax.validation.Validator;
-import java.io.*;
-import java.util.Enumeration;
+import java.io.FileNotFoundException;
 
 @SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 //@Configuration定义配置类
@@ -48,12 +43,19 @@ public class Application {
         return new LocalValidatorFactoryBean();
     }
 
+//    @Bean
+//    public FilterRegistrationBean sitemeshFilter() {
+//        FilterRegistrationBean registration = new FilterRegistrationBean();
+//        registration.setFilter(new SiteMeshFilter());
+//        registration.addInitParameter("sitemesh.configfile","classpath:sitemesh/sitemesh.xml");
+//        registration.addUrlPatterns("/*");
+//        registration.setOrder(Ordered.LOWEST_PRECEDENCE);
+//        return registration;
+//    }
+
     @Bean
-    public FilterRegistrationBean sitemeshFilter() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new SiteMeshFilter());
-        registration.addInitParameter("sitemesh.configfile","classpath:sitemesh/sitemesh.xml");
-        return registration;
+    public Filter sitemeshFilter() {
+        return new MySiteMeshFilter();
     }
 
 }
