@@ -5,6 +5,8 @@
  *******************************************************************************/
 package org.springside.examples.quickstart.web.task;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springside.examples.quickstart.entity.Task;
 import org.springside.examples.quickstart.entity.User;
 import org.springside.examples.quickstart.service.account.ShiroDbRealm.ShiroUser;
@@ -39,6 +41,8 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/task")
 public class TaskController {
+
+	private static final Logger log = LoggerFactory.getLogger(TaskController.class);
 
 	private static final String PAGE_SIZE = "3";
 
