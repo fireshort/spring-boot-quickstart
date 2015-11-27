@@ -3,7 +3,7 @@ spring-boot-quickstart是基于Spring Boot技术，Pragmatic风格的JavaEE应�
 一个迷你的TodoList应用，任务管理是一个典型的CRUD场景，还提供了任务管理的Restful API。用户注册、用户资料修改，管理员后台用户管理可以作为很多项目的初始骨架。
 
 ## 运行
-配置好maven之后，来到项目的根目录，执行 mvn spring-boot:run 启动项目，然后在浏览器打开 http://localhost/ 就可以访问项目。
+配置好maven之后，来到项目的根目录，执行 mvn spring-boot:run 启动项目，然后在浏览器打开 http://localhost/ 就可以访问项目。这种方式启动支持代码热加载。
 
 Spring Boot可以打包生成一个可执行的jar，由于jsp的限制，必须打包成war格式。直接mvn package就可以打包生成可执行的war。
 ```
