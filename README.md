@@ -19,3 +19,5 @@ Spring Boot不是又一个Spring的子项目，本身并不提供Spring框架的
 
 传统基于Spring的Java Web应用，需要配置web.xml、一坨坨的applicationContext*.xml，将应用打成war包放入应用服务器(Tomcat, Jetty等)中并运行。
 
+## 参考资料
+1. [Spring Boot官方的Samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples);
