@@ -14,6 +14,10 @@ java -jar spring-boot-quickstart-0.0.1-SNAPSHOT.war
 
 项目默认用h2database，在application.properties中设置了"spring.datasource.initialize=true"和"spring.datasource.platform=h2"，Spring Boot会自动导入schema-h2.sql、data-h2.sql来初始化数据库。如果要切换到使用mysql，只要在pom.xml中反注释掉mysql相关的dependency（同时把h2database的dependency注释掉），再修改application.properties中的相关配置即可。
 
+## 更新日志
+* 2016-1-7 BootStrap升级到3.3.6;
+  BootStrap3.0版本最大的改变就是移动优先（mobile first），任意一个使用了BootStrap3.0以上的页面，在移动终端上会有比较好的输出和响应；
+
 ## Spring Boot介绍
 Spring Boot不是又一个Spring的子项目，本身并不提供Spring框架的核心特性以及扩展功能，是用于快速、敏捷地开发新一代基于Spring框架的应用程序。也就是说，它并不是用来替代Spring的解决方案，而是和Spring框架紧密结合用于提升Spring开发者体验的工具。同时它通过Maven/Gradle集成了大量常用的第三方库配置（例如Spring Security、JPA、JDBC、Mongo、Redis、Mail等等），Spring Boot应用中这些第三方库几乎可以零配置的开箱即用（out-of-the-box），大部分的Spring Boot应用都只需要非常少量的配置代码，开发者能够更加专注于业务逻辑。
 

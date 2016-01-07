@@ -44,7 +44,7 @@ public class TaskController {
 
 	private static final Logger log = LoggerFactory.getLogger(TaskController.class);
 
-	private static final String PAGE_SIZE = "3";
+	private static final String PAGE_SIZE = "15";
 
 	private static Map<String, String> sortTypes = Maps.newLinkedHashMap();
 	static {
