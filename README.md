@@ -25,3 +25,5 @@ Spring Boot不是又一个Spring的子项目，本身并不提供Spring框架的
 
 ## 参考资料
 1. [Spring Boot官方的Samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples);
+2. [Spring Boot Rock'n'Roll](http://afoo.me/posts/2015-07-09-how-spring-boot-works.html);
+挖财专家的文章，不错的Spring Boot入门文章。关于logging部分需要更新，新版Spring Boot默认使用logback，spring-boot-starter-logging、spring-boot-starter-log4j、spring-boot-starter-log4j2已经没有。
