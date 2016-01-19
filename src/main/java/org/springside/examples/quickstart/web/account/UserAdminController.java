@@ -5,6 +5,9 @@
  *******************************************************************************/
 package org.springside.examples.quickstart.web.account;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cache.CacheManager;
 import org.springside.examples.quickstart.entity.User;
 import org.springside.examples.quickstart.service.account.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springside.examples.quickstart.service.account.UserService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -24,9 +28,13 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/admin/user")
 public class UserAdminController {
+	private static Logger logger = LoggerFactory.getLogger(UserAdminController. class);
 
 	@Autowired
 	private AccountService accountService;
+
+	@Autowired
+	private UserService userService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model) {
@@ -38,13 +46,13 @@ public class UserAdminController {
 
 	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("user", accountService.getUser(id));
+		model.addAttribute("user", userService.getUser(id));
 		return "account/adminUserForm";
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
-		accountService.updateUser(user);
+		userService.updateUser(user);
 		redirectAttributes.addFlashAttribute("message", "更新用户" + user.getLoginName() + "成功");
 		return "redirect:/admin/user";
 	}

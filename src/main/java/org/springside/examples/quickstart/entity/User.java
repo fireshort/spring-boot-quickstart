@@ -15,12 +15,13 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "ss_user")
-public class User extends IdEntity {
+public class User extends IdEntity implements Serializable {
 	private String loginName;
 	private String name;
 	private String plainPassword;

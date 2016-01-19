@@ -39,7 +39,7 @@
 			<div class="form-group">
 				<label class="col-xs-2">注册日期:</label>
 				<div class="col-xs-6">
-					<span class="help-inline" style="padding:5px 0px"><fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" /></span>
+					<span class="help-block" ><fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" /></span>
 				</div>
 			</div>
 			<div class="form-actions">
