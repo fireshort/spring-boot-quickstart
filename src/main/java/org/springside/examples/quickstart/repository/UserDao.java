@@ -5,6 +5,8 @@
  *******************************************************************************/
 package org.springside.examples.quickstart.repository;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springside.examples.quickstart.entity.User;
 

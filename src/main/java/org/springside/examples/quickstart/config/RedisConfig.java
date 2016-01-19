@@ -52,7 +52,6 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public CacheManager cacheManager(
             RedisTemplate redisTemplate) {
-        logger.info("redis connection:"+redisTemplate.getConnectionFactory().getConnection().isClosed());
         CacheManager redisCacheManager = new RedisCacheManager(redisTemplate);
         return redisCacheManager;
     }

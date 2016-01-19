@@ -20,6 +20,7 @@ java -jar spring-boot-quickstart-0.0.1-SNAPSHOT.war
 * 2016-1-7 BootStrap升级到3.3.6;
  
   BootStrap3.0版本最大的改变就是移动优先（mobile first），任意一个使用了BootStrap3.0以上的页面，在移动终端上会有比较好的输出和响应；
+
 * 2016-1-19 增加redis作为缓存；
 
 在UserService中演示；
