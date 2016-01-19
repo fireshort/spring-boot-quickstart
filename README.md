@@ -34,6 +34,6 @@ Spring Boot不是又一个Spring的子项目，本身并不提供Spring框架的
 ## 参考资料
 1. [Spring Boot官方的Samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples);
 2. [Spring Boot Rock'n'Roll](http://afoo.me/posts/2015-07-09-how-spring-boot-works.html);
- > 挖财专家[王福强](http://afoo.me/whoami.html)不错的Spring Boot入门文章。
+挖财专家[王福强](http://afoo.me/whoami.html)不错的Spring Boot入门文章。
 3. [Spring Cache](http://blog.csdn.net/qq_25223941/article/details/50495607);
- > Spring Cache中文说明，简明扼要。
+Spring Cache中文说明，简明扼要。
