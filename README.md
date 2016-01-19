@@ -24,7 +24,7 @@ java -jar spring-boot-quickstart-0.0.1-SNAPSHOT.war
 * 2016-1-19 增加redis作为缓存；
 
 在UserService中演示；
-@Cacheable 同时和 @Transactional 在一起的话不生效，所以缓存方法从AccountService抽出来，单独放到这个类。
+@Cacheable/@CacheEvict 同时和 @Transactional 在一起的话不生效，所以缓存方法从AccountService抽出来，单独放到这个类。
 
 ## Spring Boot介绍
 Spring Boot不是又一个Spring的子项目，本身并不提供Spring框架的核心特性以及扩展功能，是用于快速、敏捷地开发新一代基于Spring框架的应用程序。也就是说，它并不是用来替代Spring的解决方案，而是和Spring框架紧密结合用于提升Spring开发者体验的工具。同时它通过Maven/Gradle集成了大量常用的第三方库配置（例如Spring Security、JPA、JDBC、Mongo、Redis、Mail等等），Spring Boot应用中这些第三方库几乎可以零配置的开箱即用（out-of-the-box），大部分的Spring Boot应用都只需要非常少量的配置代码，开发者能够更加专注于业务逻辑。
@@ -36,3 +36,7 @@ Spring Boot不是又一个Spring的子项目，本身并不提供Spring框架的
 2. [Spring Boot Rock'n'Roll](http://afoo.me/posts/2015-07-09-how-spring-boot-works.html);
 
 挖财专家[王福强](http://afoo.me/whoami.html)不错的Spring Boot入门文章。
+
+3. [Spring Cache](http://blog.csdn.net/qq_25223941/article/details/50495607);
+
+Spring Cache中文说明，简明扼要。
